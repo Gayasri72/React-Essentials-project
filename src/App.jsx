@@ -4,13 +4,10 @@ import Header from "./components/Header";
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 
-
-
 function App() {
-  function handleSelect() {
-    console.log('Hello world!-selected');
-      
-    }; 
+  function handleSelect(selectedButton) {
+    console.log("Hello world!-selected");
+  }
 
   return (
     <div>
@@ -19,7 +16,11 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept {...CORE_CONCEPTS[0]} />
+            <CoreConcept
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
+            />
             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
@@ -34,7 +35,6 @@ function App() {
             <TabButton onSelect={handleSelect}>State</TabButton>
           </menu>
           Dynamic Content
-
         </section>
       </main>
     </div>
